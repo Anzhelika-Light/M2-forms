@@ -1,16 +1,19 @@
+import FormAddBook from './FormAddBook/FormAddBook';
+import BookList from './BookList/BookList';
+
+const books = [
+  {
+    id: '1',
+    title: 'Worm',
+    author: 'Джон Маккрей',
+  },
+];
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+      <FormAddBook onSubmit={() => {}} />
+      <BookList items={books} />
     </div>
   );
 };
