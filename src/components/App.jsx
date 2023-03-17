@@ -1,19 +1,9 @@
-import FormAddBook from './FormAddBook/FormAddBook';
-import BookList from './BookList/BookList';
-
-const books = [
-  {
-    id: '1',
-    title: 'Worm',
-    author: 'Джон Маккрей',
-  },
-];
+import Books from './Books/Books';
 
 export const App = () => {
   return (
     <div>
-      <FormAddBook onSubmit={() => {}} />
-      <BookList items={books} />
+      <Books />
     </div>
   );
 };

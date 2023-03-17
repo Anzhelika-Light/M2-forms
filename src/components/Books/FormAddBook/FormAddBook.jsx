@@ -1,5 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
+import { nanoid } from 'nanoid';
+
 import styles from './form-add-book.module.css';
 
 class FormAddBook extends Component {
@@ -16,6 +18,9 @@ class FormAddBook extends Component {
     author: '',
   };
 
+  titleId = nanoid();
+  authorId = nanoid();
+
   handleChange = ({ target }) => {
     const { value, name } = target;
     this.setState({
@@ -25,7 +30,6 @@ class FormAddBook extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-
     const { onSubmit } = this.props;
     onSubmit({ ...this.state });
     this.reset();
@@ -39,34 +43,38 @@ class FormAddBook extends Component {
   }
 
   render() {
+    const { handleChange, handleSubmit, titleId, authorId } = this;
     const { title, author } = this.state;
+
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
-          <label htmlFor="bookName">Book name</label>
+          <label htmlFor={titleId}>Book name</label>
           <input
             name="title"
             value={title}
-            onChange={this.handleChange}
+            onChange={handleChange}
             className={styles.field}
             type="text"
-            id="bookName"
+            id={titleId}
             placeholder="Enter book name"
+            required
           />
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="author">Author</label>
+          <label htmlFor={authorId}>Author</label>
           <input
             name="author"
             value={author}
-            onChange={this.handleChange}
+            onChange={handleChange}
             className={styles.field}
             type="text"
-            id="author"
+            id={authorId}
             placeholder="Enter an author"
+            required
           />
         </div>
-        <button className={styles.btn} type="button">
+        <button className={styles.btn} type="submit">
           Add book
         </button>
       </form>
