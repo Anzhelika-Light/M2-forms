@@ -10,6 +10,22 @@ class Books extends Component {
     filter: '',
   };
 
+  componentDidMount() {
+    const books = JSON.parse(localStorage.getItem('books'));
+    if (books?.length) {
+      this.setState({
+        books,
+      });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { books } = this.state;
+    if (prevState.books.length !== books.length) {
+      localStorage.setItem('books', JSON.stringify(books));
+    }
+  }
+
   addBook = data => {
     if (this.isDublicate(data)) {
       return alert(`${data.title} - ${data.author} is already in the list`);
