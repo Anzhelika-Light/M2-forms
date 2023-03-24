@@ -1,0 +1,12 @@
+.mainTitle {
+  font-style: 26px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
