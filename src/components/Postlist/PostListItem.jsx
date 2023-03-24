@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import css from './postlist.module.css';
 
 const PostListItem = ({ title, body }) => {
@@ -13,3 +15,8 @@ const PostListItem = ({ title, body }) => {
 };
 
 export default PostListItem;
+
+PostListItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+};

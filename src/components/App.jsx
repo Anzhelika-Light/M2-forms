@@ -1,10 +1,12 @@
 // import Books from './Books/Books';
 // import Colorpicker from './Colorpicker/Colorpicker';
 // import Posts from './Posts/Posts';
-// import ColorpickerOptions from '../colorpicker.json';
-import Posts from '../data/postlist.json';
+// import PostList from './Postlist/Postlist';
+import MainMenu from './MainMenu/MainMenu';
 
-import PostList from './Postlist/Postlist';
+// import ColorpickerOptions from '../colorpicker.json';
+// import Posts from '../data/postlist.json';
+import mainMenuItems from '../data/mainMenuItems.json';
 
 export const App = () => {
   return (
@@ -12,7 +14,8 @@ export const App = () => {
       {/* <Books /> */}
       {/* <Posts /> */}
       {/* <Colorpicker options={ColorpickerOptions} /> */}
-      <PostList title="Post List" items={Posts} />
+      {/* <PostList title="Post List" items={Posts} /> */}
+      <MainMenu items={mainMenuItems} />
     </div>
   );
 };
