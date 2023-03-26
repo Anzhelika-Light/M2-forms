@@ -24,6 +24,6 @@ MainMenu.propTypes = {
       id: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
       link: PropTypes.string.isRequired,
-    })
+    }).isRequired
   ),
 };

@@ -19,6 +19,10 @@ const PostList = ({ title, items }) => {
 
 export default PostList;
 
+PostList.defaultProps = {
+  items: [],
+};
+
 PostList.propTypes = {
   title: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(
@@ -26,6 +30,6 @@ PostList.propTypes = {
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       body: PropTypes.string.isRequired,
-    })
+    }).isRequired
   ),
 };

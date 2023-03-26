@@ -43,6 +43,7 @@ class Books extends Component {
     });
   };
 
+  // title, author приходять зі змінної data з рядка 30 if (this.isDublicate(data)) {...}
   isDublicate({ title, author }) {
     const { books } = this.state;
     const result = books.find(
